@@ -1,0 +1,299 @@
+<!--p>checkout works!</p-->
+
+<div class="chck">
+<h1>CHECKOUT</h1>
+</div>
+  
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+      
+
+    <div class="form-group">
+
+        <label for="firstName" style='font-size: 24px;'>First Name</label>
+
+        <input 
+
+            formControlName="firstName"
+
+            id="firstName" 
+
+
+            type="text"
+
+            style='font-size: 24px;'
+            
+            text-align = "left"
+
+            class="form-control">
+
+        <!--div *ngIf="Firstname.touched && f.name.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.Firstname.errors.required">Name is required.</div>
+
+            <div *ngIf="f.name.errors.minlength">Name should be 3 character.</div>
+
+        </div-->
+
+    </div>
+
+    <br>                    
+
+    <div class="form-group">
+
+        <label for="lastName" style='font-size: 24px;' >Last Name</label>
+
+        <input 
+
+            formControlName="lastName"
+
+            id="lastName" 
+
+            type="text" 
+
+            class="form-control">
+
+        <!--div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+
+        </div-->
+
+    </div>
+
+    <br>
+    <div class="form-group">
+
+        <label for="address" style='font-size: 24px;'>Address</label>
+
+        <input 
+
+            formControlName="address"
+
+            id="address" 
+
+            type="text" 
+
+            class="form-control">
+
+        <!--div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+
+        </div-->
+
+    </div>
+
+    <br>
+
+    <div class="form-group">
+
+        <label for="city" style='font-size: 24px;'>City</label>
+
+        <input 
+
+            formControlName="city"
+
+            id="city" 
+
+            type="text" 
+
+            class="form-control">
+
+        <!--div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+
+        </div-->
+
+    </div>
+
+    <br>
+    <div class="form-group">
+
+        <label for="postalCode" style='font-size: 24px;' >Postal Code</label>
+
+        <input 
+
+            formControlName="postalCode"
+
+            id="postalCode" 
+
+            type="text" 
+
+            maxlength = "6"
+
+            class="form-control">
+
+        <!--div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+
+        </div-->
+
+    </div>
+
+
+    <br>
+
+    <div class="form-group">
+
+        <label for="country" style='font-size: 24px;'>Country</label>
+
+        <select id="country" name="country" style='font-size: 24px;'>
+            <option value="usa">U.S.A</option>
+            <option value="canada">Canada</option>
+            
+          </select> 
+        
+        </div>
+
+    <br>
+    <br>
+
+    <div class="popSavedAddress">
+        <button (click) = "populateSavedAddress()" style='font-size: 24px;' >Populate Saved Address</button>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="form-group">
+
+        <label for="visaorMaster" style='font-size: 24px;' >Visa/MasterCard</label>
+
+        <select id="visaorMaster" name="visaorMaster" style='font-size: 24px;'>
+            <option value="visa">Visa</option>
+            <option value="master">MasterCard</option>
+            
+          </select> 
+        
+    </div>
+
+    <br>
+
+    <div class="form-group">
+
+        <label for="creditCardNumber" style='font-size: 24px;'>Credit Card Number</label>
+
+        <input 
+
+            formControlName="creditCardNumber"
+
+            id="creditCardNumber" 
+
+            type="text" 
+
+            maxlength = "16"
+
+
+            class="form-control">
+
+        <!--div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+
+        </div-->
+
+    </div>
+
+    <br>
+    <div class="form-group">
+
+        <label for="expiry" style='font-size: 24px;'>Expiry Date</label>
+
+        <input 
+
+            formControlName="expiry"
+
+            id="expiry" 
+
+            type="text" 
+
+            class="form-control">
+
+        <!--div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+
+        </div-->
+
+    </div>
+   
+    <br>
+    <div class="form-group">
+
+        <label for="cvc" style='font-size: 24px;'>CVC</label>
+
+        <input 
+
+            formControlName="cvc"
+
+            id="cvc" 
+
+            type="text" 
+
+            maxlength = "4"
+
+
+            class="form-control">
+
+        <!--div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+
+        </div-->
+
+    </div>
+
+    <br>
+
+    <div class="form-group">
+
+        <label for="nameonCard" style='font-size: 24px;'>Name on Card</label>
+
+        <input 
+
+            formControlName="nameonCard"
+
+            id="nameonCard" 
+
+            type="text" 
+
+            class="form-control">
+
+        <!--div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+
+            <div *ngIf="f.email.errors.required">Email is required.</div>
+
+            <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+
+        </div-->
+
+    </div>
+
+
+
+    <br>
+
+  
+
+    <div class="submitCl">
+    <button (click)="submit()" [disabled]="!form.valid" style='font-size: 24px;'>Submit</button>
+</div>
+</form>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -21,6 +23,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { OrderItemComponent } from './components/order-item/order-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import { DatePipe } from '@angular/common';
     NavBarComponent,
     ItemComponent,
     CartItemComponent,
-    OrderItemComponent
+    OrderItemComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +48,13 @@ import { DatePipe } from '@angular/common';
     NoopAnimationsModule,
     MatCardModule,
     HttpClientModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
